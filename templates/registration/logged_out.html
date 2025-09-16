@@ -1,7 +1,15 @@
 {% extends "layout.html" %}
 
 {% block contant %}
-<h2>Logout Form</h2>
-
-<p>You have been Logged Out<a href="{% url 'login'%}">Login here</a></p> 
-{% endblock %}  
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-6 col-lg-4 text-center">
+      <div class="card shadow-sm p-4">
+        <h2 class="mb-3">Logout</h2>
+        <p>You have been logged out.</p>
+        <a href="{% url 'login' %}" class="btn btn-primary mt-2">Login here</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
