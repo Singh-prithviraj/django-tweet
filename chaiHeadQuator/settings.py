@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-&sp3pfryn1nq6q4ky%3*()3$18hg0n7_sjtn&&6jfz&rf_+nc1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "widget_tweaks",
     'tweet',
 ]
 
@@ -82,7 +83,7 @@ DATABASES = {
     }
 }
 
-DATABASES["default"] = dj_database_url.parse("postgresql://prithvi_django_tweet_user:1d0KUUoaXF5QkfjdKjPuqz0SDa8sJMwL@dpg-d3452c6r433s7391te8g-a.singapore-postgres.render.com/prithvi_django_tweet")
+#DATABASES["default"] = dj_database_url.parse("postgresql://prithvi_django_tweet_user:1d0KUUoaXF5QkfjdKjPuqz0SDa8sJMwL@dpg-d3452c6r433s7391te8g-a.singapore-postgres.render.com/prithvi_django_tweet")
 
 # postgresql://prithvi_django_tweet_user:1d0KUUoaXF5QkfjdKjPuqz0SDa8sJMwL@dpg-d3452c6r433s7391te8g-a.singapore-postgres.render.com/prithvi_django_tweet
 
@@ -131,9 +132,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'staticfiles')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 LOGIN_URL = '/accounts/login/'
 
-LOGIN_REDIRECT_URL = '/tweet/'
-LOGOUT_REDIRECT_URL = '/tweet/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'

@@ -163,15 +163,13 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def toggle_like(request, tweet_id):
-    tweet = Tweet.objects.get(id=tweet_id)
-    like, created = Like.objects.get_or_create(user=request.user, tweet=tweet)
-    if not created:
-        like.delete()
-        liked = False
-    else:
-        liked = True
-    return JsonResponse({'liked': liked, 'likes_count': tweet.likes.count()})
-
+    if request.method == "POST" and request.user.is_authenticated:
+        tweet = get_object_or_404(Tweet, id=tweet_id)
+        like, created = Like.objects.get_or_create(user=request.user, tweet=tweet)
+        if not created:
+            like.delete()
+        return JsonResponse({'likes_count': tweet.likes.count()})
+    return JsonResponse({'error': 'Unauthorized'}, status=403)
     
 from django.shortcuts import redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required

@@ -5,9 +5,9 @@ chai or tweet
 {% endblock %}
 
 {% block contant %}
-<h1 class="text-center mt-4">Jay Shree Mahakal | Tweet page</h1>
+<h1 class="text-center mt-4">Welcome to Prithvi Tweet </h1>
 
-<a class="btn btn-primary mb-4" href="{% url 'tweet_create' %}">Create a tweet</a>
+<a class="btn btn-primary mt-4 mb-4" href="{% url 'tweet_create' %}">Create a tweet</a>
 
 <div class="container mt-3">
   <div class="row g-4">
@@ -27,13 +27,13 @@ chai or tweet
                 <a href="{% url 'tweet_delete' tweet.id %}" class="btn btn-danger btn-sm">Delete</a>
               {% endif %}
 
-              <!-- Likes -->
+               <!-- Likes -->
               <form class="d-inline like-form" data-id="{{ tweet.id }}">
                 {% csrf_token %}
                 <button type="button" class="btn btn-sm btn-outline-primary like-btn">
-                  Like (<span class="like-count">{{ tweet.likes.count }}</span>)
+                    Like (<span class="like-count">{{ tweet.likes.count }}</span>)
                 </button>
-              </form>
+              </form> 
 
               <!-- Comment Form -->
               <form action="{% url 'add_comment' tweet.id %}" method="post" class="mt-2 comment-form">
