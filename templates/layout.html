@@ -29,20 +29,25 @@
       {% if user.is_authenticated %}
         <form action="{% url 'logout' %}" method="post" class="d-inline">
           {% csrf_token %}
-          <button class="btn btn-danger btn-sm mx-1 mb-1" type="submit">Logout</button>
+          <button class="btn btn-danger btn-sm mx-1 mb-0" type="submit">Logout</button>
         </form>
       {% else %}
-        <a href="{% url 'register' %}" class="btn btn-primary btn-sm mx-1 mb-1">Register</a>
-        <a href="{% url 'login' %}" class="btn btn-success btn-sm mx-1 mb-1">Login</a>
+        <a href="{% url 'register' %}" class="btn btn-primary btn-sm mx-1 mb-0">Register</a>
+        <a href="{% url 'login' %}" class="btn btn-success btn-sm mx-1 mb-0">Login</a>
       {% endif %}
     </div>  
 
 
     <!-- Left links -->
     <ul class="navbar-nav d-flex flex-row flex-wrap me-3">
+      <li class="nav-item mx-1 mb-2 me-2 ">
+        <a href="{% url 'tweet_list' %}" class="btn btn-success btn-sm mb-0 my-2">Home</a>
+     </li>
       <li class="nav-item mx-2"><a class="nav-link" href="https://github.com/Singh-prithviraj" target="_blank">GitHub</a></li>
       <li class="nav-item mx-2"><a class="nav-link" href="https://www.linkedin.com/in/prithviraj-singh-chouhan-b415a2319/" target="_blank">LinkedIn</a></li>
       <li class="nav-item mx-2"><a class="nav-link" href="https://www.instagram.com/its_prithvi_banna_" target="_blank">Instagram</a></li>
+      
+    
     </ul>
 
     <!-- Auth Buttons -->
@@ -53,24 +58,21 @@
      
     <div class="d-flex flex-wrap align-items-center ms-auto mt-2 mt-lg-0">
      <ul class="navbar-nav d-flex flex-row flex-wrap mb-1">
-     <li class="nav-item mx-3 mb-1 ">
-        <a href="{% url 'tweet_list' %}" class="btn btn-success btn-sm">Home</a>
-     </li>
+     
     </ul>
-
+      
 
       <form class="d-flex me-2 mb-1" method="get" action="{% url 'tweet_list' %}">
         <input class="form-control me-2" type="search" placeholder="Search by username or content.." name="q" value="{{ query }}">
-        <button class="btn btn-outline-success btn-sm" type="submit">Search</button>
-      </form>
+        <button class="btn btn-outline-success btn-sm me-2" type="submit">Search</button>
      
-    </div>
-
-    
-
-       <button id="theme-toggle" class="btn btn-secondary btn-sm mb-1">
+       <button id="theme-toggle" class="btn btn-secondary btn-sm mb-1 md-2 mx-2  ">
         <i id="theme-icon" class="bi bi-moon-fill"></i>
       </button>
+     
+      </form>
+  
+    </div>
 
   </div>
 </nav>

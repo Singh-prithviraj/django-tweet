@@ -94,7 +94,7 @@ def tweet_create(request):
             tweet.save()
             return redirect('tweet_list')
     else:
-        form = TweetForm
+        form = TweetForm()
     return render(request, 'tweet_form.html',{'form':form})
 
 
