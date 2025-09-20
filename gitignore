@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# Django
+*.sqlite3
+/media/
+*.log
+
+# Cloudinary uploads (optional if you want to ignore local copies)
+photos/
+
+# Environment variables
+.env
+
+# VS Code
+.vscode/
