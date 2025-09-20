@@ -9,10 +9,13 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
+
+
 import dj_database_url
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+
 
 
 
@@ -34,9 +37,15 @@ DEBUG = os.getenv("DEBUG", "False") == "True"
 
 #ALLOWED_HOSTS = []
 #ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", ".railway.app,localhost,127.0.0.1").split(",")
+<<<<<<< HEAD
 #ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "prithvi-tweet-dj.onrender.com").split(",")
 ALLOWED_HOSTS = ["my-tweetx-django.onrender.com", "localhost", "127.0.0.1"]
 
+=======
+#ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", ".onrender.com").split(",")
+#ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
+>>>>>>> e26f0f6 (new change cloudinary)
 
 
 
@@ -186,6 +195,7 @@ CLOUDINARY_STORAGE = {
     'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
     'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
     'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
+     
 }
 
 LOGIN_URL = '/accounts/login/'
