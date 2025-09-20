@@ -37,15 +37,13 @@ DEBUG = os.getenv("DEBUG", "False") == "True"
 
 #ALLOWED_HOSTS = []
 #ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", ".railway.app,localhost,127.0.0.1").split(",")
-<<<<<<< HEAD
-#ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "prithvi-tweet-dj.onrender.com").split(",")
-ALLOWED_HOSTS = ["my-tweetx-django.onrender.com", "localhost", "127.0.0.1"]
 
-=======
+
+
 #ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", ".onrender.com").split(",")
 #ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
->>>>>>> e26f0f6 (new change cloudinary)
+
 
 
 
